@@ -7,7 +7,10 @@ set -euo pipefail
 self="${SKILLS_REPO:-iam-hbk/skills}"
 manifest="$(cd "$(dirname "$0")/.." && pwd)/third-party.txt"
 
-npx -y skills add "$self" -g --skill '*' -y "$@"
+# Skip the self-install while skills/ is empty: `skills add` exits non-zero on a repo with no skills.
+if ls "$(dirname "$0")/../skills"/*/SKILL.md >/dev/null 2>&1; then
+  npx -y skills add "$self" -g --skill '*' -y "$@"
+fi
 
 [ -f "$manifest" ] || exit 0
 while read -r source name; do
