@@ -1,6 +1,5 @@
 # Pin a version with the full URL form: https://github.com/<owner>/<repo>.git#<tag> <skill>
 # Skills by other people. One per line: <source> <skill>. Installed from upstream by scripts/install.sh.
-# emilkowalski/skills prototype  <- same name as mattpocock prototype below; the CLI keeps one. To switch, uncomment this and drop that line.
 anthropics/skills frontend-design
 bklit/bklit-ui bklit-ui
 buildgreatproducts/builder-os launch-checklist
@@ -35,6 +34,7 @@ emilkowalski/skills find-animation-opportunities
 emilkowalski/skills improve-animations
 emilkowalski/skills mobile-native
 emilkowalski/skills pick-ui-library
+emilkowalski/skills prototype
 emilkowalski/skills review-animations
 emilkowalski/skills write-swift
 enesgules/dotfiles optimise-github-actions
@@ -55,7 +55,6 @@ https://github.com/mattpocock/skills.git#v1.3.1 grilling
 https://github.com/mattpocock/skills.git#v1.3.1 handoff
 https://github.com/mattpocock/skills.git#v1.3.1 implement
 https://github.com/mattpocock/skills.git#v1.3.1 improve-codebase-architecture
-https://github.com/mattpocock/skills.git#v1.3.1 prototype
 https://github.com/mattpocock/skills.git#v1.3.1 research
 https://github.com/mattpocock/skills.git#v1.3.1 setup-matt-pocock-skills
 https://github.com/mattpocock/skills.git#v1.3.1 tdd
