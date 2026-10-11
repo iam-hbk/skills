@@ -15,5 +15,6 @@ fi
 [ -f "$manifest" ] || exit 0
 while read -r source name; do
   [ -z "${source:-}" ] || [ "${source:0:1}" = "#" ] && continue
-  npx -y skills add "$source" -g --skill "$name" -y "$@"
+  # </dev/null: otherwise npx reads the rest of the manifest from stdin and the loop stops after one line.
+  npx -y skills add "$source" -g --skill "$name" -y "$@" </dev/null
 done < "$manifest"
