@@ -1,5 +1,6 @@
 # Pin a version with the full URL form: https://github.com/<owner>/<repo>.git#<tag> <skill>
 # Skills by other people. One per line: <source> <skill>. Installed from upstream by scripts/install.sh.
+# emilkowalski/skills prototype  <- same name as mattpocock prototype below; the CLI keeps one. To switch, uncomment this and drop that line.
 anthropics/skills frontend-design
 bklit/bklit-ui bklit-ui
 buildgreatproducts/builder-os launch-checklist
@@ -22,12 +23,20 @@ deckardger/tanstack-agent-skills tanstack-query-best-practices
 deckardger/tanstack-agent-skills tanstack-router-best-practices
 deckardger/tanstack-agent-skills tanstack-start-best-practices
 emalorenzo/three-agent-skills r3f-best-practices
-emilkowalski/skill animation-vocabulary
-emilkowalski/skill apple-design
-emilkowalski/skill emil-design-eng
-emilkowalski/skill improve-animations
-emilkowalski/skill review-animations
+emilkowalski/skills animate
+emilkowalski/skills animate-expo
+emilkowalski/skills animation-performance
+emilkowalski/skills animation-vocabulary
+emilkowalski/skills apple-design
 emilkowalski/skills ask-sonner
+emilkowalski/skills break-ui
+emilkowalski/skills emil-design-eng
+emilkowalski/skills find-animation-opportunities
+emilkowalski/skills improve-animations
+emilkowalski/skills mobile-native
+emilkowalski/skills pick-ui-library
+emilkowalski/skills review-animations
+emilkowalski/skills write-swift
 enesgules/dotfiles optimise-github-actions
 flornkm/skills prefer-container-queries
 getsentry/cli sentry-cli
