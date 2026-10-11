@@ -1,0 +1,2 @@
+# Skills by other people. One per line: <source> <skill>. Installed from upstream by scripts/install.sh.
+# Pin a version with the full URL form: https://github.com/<owner>/<repo>.git#<tag> <skill>
