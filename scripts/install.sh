@@ -13,8 +13,18 @@ if ls "$(dirname "$0")/../skills"/*/SKILL.md >/dev/null 2>&1; then
 fi
 
 [ -f "$manifest" ] || exit 0
-while read -r source name; do
-  [ -z "${source:-}" ] || [ "${source:0:1}" = "#" ] && continue
-  # </dev/null: otherwise npx reads the rest of the manifest from stdin and the loop stops after one line.
-  npx -y skills add "$source" -g --skill "$name" -y "$@" </dev/null
-done < "$manifest"
+
+# One `skills add` per source with every skill from it, so each repo is cloned once
+# instead of once per line; many lines share a repo.
+grouped="$(awk '!/^#/ && NF >= 2 {
+  if (!($1 in skills)) order[++n] = $1
+  skills[$1] = skills[$1] " " $2
+} END { for (i = 1; i <= n; i++) print order[i] skills[order[i]] }' "$manifest")"
+
+while read -r source names; do
+  [ -n "${source:-}" ] || continue
+  args=()
+  for name in $names; do args+=(--skill "$name"); done
+  # </dev/null: otherwise npx reads the rest of the list from stdin and the loop stops early.
+  npx -y skills add "$source" -g "${args[@]}" -y "$@" </dev/null
+done <<< "$grouped"
