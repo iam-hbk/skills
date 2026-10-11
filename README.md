@@ -78,12 +78,14 @@ Cloud sessions don't see your local `~/.claude/skills`. Add this to the cloud
 environment's setup script:
 
 ```bash
-git clone -q https://github.com/iam-hbk/skills.git /opt/skills
-/opt/skills/scripts/install.sh -a claude-code
+if git clone -q https://github.com/iam-hbk/skills.git /opt/skills; then
+  /opt/skills/scripts/install.sh -a claude-code || echo "skills install failed; continuing without them"
+fi
 ```
 
-This repo is private, so the session needs GitHub access to it (the Claude GitHub
-App installed on this repo).
+The repo is public because a setup script only gets GitHub credentials for the
+repos attached to that session; a private repo fails to clone there. The guard
+keeps a failed install from blocking the session.
 
 ## Add or update skills
 
